@@ -3,7 +3,6 @@ Codes for Networking Lab | Coded in Java
 > Things that can be done using Network Programming
 
 1. Browsing the Web with HTTP
-1. Browsing the Web with HTTP
 1. Parsing and rendering HTML
 1. Sending email with SMTP
 1. Receiving email with POP and IMAP
