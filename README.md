@@ -1,5 +1,5 @@
 # NetworkingLab
-Codes for Networking Lab | Coded in Java
+Codes for Networking Lab | Coded in Java and Python
 > Things that can be done using Network Programming
 
 1. Browsing the Web with HTTP
