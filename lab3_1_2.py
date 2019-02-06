@@ -24,19 +24,7 @@ for x in ipl:
     print(hex(int(x))[2:],end=" ")
     
     
-#Getting the Service Name
-print("\nThe Service Name is ",socket.getservbyport(80,"tcp"))
-
-#Getting Time
-import ntplib
-from time import ctime
-c = ntplib.NTPClient()
-response = c.request('europe.pool.ntp.org',version=3)
-print(ctime(response.tx_time))
 
 
-#Blocking Socket
-clientSocket=socket.socket()
-host=socket.gethostname()
-clientSocket.connect((host,12345))
-clientSocket.setblocking(0)
+
+
