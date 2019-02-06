@@ -7,6 +7,7 @@ Created on Wed Feb  6 09:41:55 2019
 
 import socket
 import sys
+import os
 
 def reuse_socket_addr():
     sock = socket.socket( socket.AF_INET, socket.SOCK_STREAM )
