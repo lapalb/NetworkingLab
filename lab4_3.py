@@ -2,10 +2,8 @@ import argparse
 LOCAL_SERVER_HOST = 'localhost'
 REMOTE_SERVER_HOST = 'nitrkl.ac.in'
 BUFSIZE = 4096
-
 import asyncore
 import socket
-
 class PortForwarder(asyncore.dispatcher):
     def __init__(self, ip, port, remoteip,remoteport,backlog=5):
         asyncore.dispatcher.__init__(self)

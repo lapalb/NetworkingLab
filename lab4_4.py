@@ -2,12 +2,11 @@ import argparse
 import socket
 import errno
 from time import time as now
-DEFAULT_TIMEOUT = 50
+DEFAULT_TIMEOUT = 30
 DEFAULT_SERVER_HOST = 'localhost'
 DEFAULT_SERVER_PORT = 8080
 
-class NetServiceChecker(object):
-    """ Wait for a network service to come online"""
+class SC(object):
     def __init__(self, host, port, timeout=DEFAULT_TIMEOUT):
         self.host = host
         self.port = port
@@ -18,7 +17,6 @@ class NetServiceChecker(object):
         self.sock.close()
 
     def check(self):
-        """ Check the service """
         if self.timeout:
             end_time = now() + self.timeout
     
@@ -32,7 +30,6 @@ class NetServiceChecker(object):
                         print ("Next Timeout %ss" %round(next_timeout))
                         self.sock.settimeout(next_timeout)
                 self.sock.connect((self.host, self.port))
-            # handle exceptions
             except socket.timeout as err:
                 if self.timeout:
                     return False
@@ -49,7 +46,7 @@ if __name__ == '__main__':
     parser.add_argument('--timeout', action="store", dest="timeout", type=int, default=DEFAULT_TIMEOUT)
     given_args = parser.parse_args() 
     host, port, timeout = given_args.host, given_args.port, given_args.timeout
-    service_checker = NetServiceChecker(host, port, timeout=timeout)
+    service_checker = SC(host, port, timeout=timeout)
     print ("Pinging for network service %s:%s ..." %(host, port))
     if service_checker.check():
         print ("Congrats! Your Service is available!")
