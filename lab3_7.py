@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Feb  6 09:41:55 2019
-
-@author: student
-"""
-
 import socket
 import sys
 import os
