@@ -21,7 +21,7 @@ class RequestHandler(BaseHTTPRequestHandler):
             self.end_headers()
 	    count=1
             while(count>0):
-		    d="	Hi Client: Your Cookie I'd is : "+id_generator()
+		    d="Hi Client: Your Cookie I'd is : "+id_generator()
 		    b=bytes(d)
 		    self.wfile.write(b)
 		    count=count-1

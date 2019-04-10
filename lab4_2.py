@@ -33,7 +33,7 @@ class ChatServer(object):
     def __init__(self, port, backlog=5):
         self.clients = 0
         self.clientmap = {}
-        self.outputs = [] # list output sockets
+        self.outputs = [] 
         self.server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         self.server.bind((SERVER_HOST, port))
